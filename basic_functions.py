@@ -1,24 +1,59 @@
-import yfinance as yf
+import pandas as pd
+import requests
 
-class CheckMyStockVitals:
+from datetime import datetime
+import time
+
+class VeryBasic:
 
     def __init__(self):
 
         """ Base class with a couple of functions that return basic info.
         """
 
-    def check_vitals(company_name):
-        stock_ticker = yf.Ticker(company_name)
-        stock_info = stock_ticker.info
-        price = stock_info['regularMarketOpen']
-        name = stock_info['shortName']
-        print("The Market Open Price today for {} is ${}.".format(name, price))
+    def unix_to_date(unix_timestamp):
+        ts = int(unix_timestamp)
+        return datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d')
 
-class VisualizeMyStock(CheckMyStockVitals):
-    """ Binomial distribution class for calculating and
-    visualizing a Binomial distribution.
-    """
+    def get_json_response(ticker, url, KEY):
+        querystring = {"symbol":ticker,"region":"US"}
+
+        headers = {
+                  'x-rapidapi-host': "yh-finance.p.rapidapi.com",
+                  'x-rapidapi-key': KEY
+                  }
+
+        return requests.request("GET", url, headers=headers, params=querystring).json()
+
+class SecondLevel(VeryBasic):
 
     def __init__(self):
+        VeryBasic.__init__(self)
 
-        CheckMyStockVitals.__init__(self)
+    def get_income_statement(ticker, period):
+        financials_response = get_json_response(ticker,'https://yh-finance.p.rapidapi.com/stock/v2/get-financials',period)
+        
+        income_statment_df = pd.DataFrame()
+
+        for quarter in financials_response['incomeStatementHistoryQuarterly']['incomeStatementHistory']:
+            revenue_line = pd.Series([quarter['endDate']['fmt'],
+                                  round(quarter['totalRevenue']['raw']/1000000000,3),
+                                  round(quarter['grossProfit']['raw']/1000000000,3),
+                                  round(quarter['netIncome']['raw']/1000000000,3),
+                                  ],
+            index = ['quarter','revenue_billion','gross_profit_billion','net_income_billion'])
+            income_statment_df = income_statment_df.append(revenue_line, ignore_index=True)
+
+        income_statment_df['quarter'] = [pd.Timestamp(quarter) for quarter in income_statment_df['quarter']]
+        income_statment_df['quarter'] = ['4Q2020' if quarter <= pd.Timestamp('2021-01-01T12') else
+                                     '1Q2021' if quarter > pd.Timestamp('2021-01-02T12') and quarter < pd.Timestamp('2021-04-01T12') else
+                                     '2Q2021' if quarter > pd.Timestamp('2021-04-02T12') and quarter < pd.Timestamp('2021-07-01T12') else
+                                     '3Q2021' if quarter > pd.Timestamp('2021-07-02T12') and quarter < pd.Timestamp('2021-10-02T12') else
+                                     '4Q2021' for quarter in income_statment_df['quarter']]
+
+        income_statment_df.loc[:,'gross_profit_margin'] = income_statment_df['gross_profit_billion']/income_statment_df['revenue_billion']
+        income_statment_df.loc[:,'net_profit_margin'] = income_statment_df['net_income_billion']/income_statment_df['revenue_billion']
+
+        income_statment_df['ticker'] = ticker
+
+        return income_statment_df.head(period)

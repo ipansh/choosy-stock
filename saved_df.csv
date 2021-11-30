@@ -1,0 +1,103 @@
+,ticker,company_name,industry,sub_industry,last_close_price,yoy_growth,volatility,assets_billion,liabilities_billion,la_ratio,gross_profit_margin,net_profit_margin,pe_ratio
+0,ATVI,Activision Blizzard,Communication Services,Communication Services,60.6,-0.289,0.11,11.21,2.02,0.18,0.7454106280193237,0.3086956521739131,23.24
+1,ADBE,Adobe Inc.,Information Technology,Information Technology,662.1,0.28,0.14,8.62,6.19,0.72,0.8813214739517153,0.30800508259212195,57.56
+2,AMD,Advanced Micro Devices,Information Technology,Information Technology,154.8,0.437,0.19,7.99,3.56,0.45,0.48365406909343844,0.21400417342916767,36.49
+3,ALGN,Align Technology,Health Care,Health Care,634.2,0.25,0.11,2.46,1.79,0.73,0.7431102362204725,0.1781496062992126,76.22
+4,GOOGL,Alphabet Inc.,Communication Services,Communication Services,2843.7,0.372,0.17,184.11,61.78,0.34,0.5758315673085783,0.2907951718418871,29.01
+5,GOOG,Alphabet Inc.,Communication Services,Communication Services,2856.1,0.372,0.17,184.11,61.78,0.34,0.5758315673085783,0.2907951718418871,28.92
+6,AMZN,Amazon (company),Consumer Discretionary,Consumer Discretionary,3504.6,0.088,0.05,138.53,123.99,0.9,0.43210121647475,0.028480669963541858,57.20
+7,AEP,American Electric Power,Utilities,Utilities,82.6,-0.028,0.04,5.79,9.95,1.72,0.46895955007570844,0.17218256543370106,17.31
+8,AMGN,Amgen,Health Care,Health Care,201.1,-0.118,0.06,24.38,14.84,0.61,0.7600656128839846,0.28094243960632265,21.61
+9,ADI,Analog Devices,Information Technology,Information Technology,178.0,0.226,0.07,5.38,2.77,0.52,0.47948717948717956,0.03247863247863248,37.96
+10,ANSS,Ansys,Information Technology,Information Technology,382.5,0.136,0.06,1.76,0.6,0.34,0.8934240362811792,0.1927437641723356,65.22
+11,AAPL,Apple Inc.,Information Technology,Information Technology,156.8,0.256,0.08,134.84,125.48,0.93,0.4219529750479846,0.24653310940499037,27.64
+12,AMAT,Applied Materials,Information Technology,Information Technology,143.3,0.423,0.15,16.11,6.34,0.39,0.480973379062551,0.27960150253143884,23.77
+13,ASML,ASML Holding,Information Technology,Information Technology,782.0,0.44,0.18,15.68,9.16,0.58,0.5172676970043885,0.3319977103606182,55.54
+14,TEAM,Atlassian,Information Technology,Information Technology,391.5,0.428,0.27,2.01,2.4,1.19,0.8403908794788274,-0.6514657980456027,
+15,ADSK,Autodesk,Information Technology,Information Technology,254.2,-0.073,0.06,2.65,3.28,1.24,0.9174067495559503,0.12166962699822383,54.99
+16,ADP,Automatic Data Processing,Information Technology,Information Technology,229.6,0.237,0.09,52.05,49.67,0.95,0.44702505219206684,0.18293319415448853,32.94
+17,BIDU,Baidu,Communication Services,Communication Services,153.1,0.089,0.22,215.39,73.92,0.34,0.49481532533441935,-0.5187494126123868,7.77
+18,BIIB,Biogen,Health Care,Health Care,242.9,-0.004,0.14,7.16,4.21,0.59,0.8157610651313422,0.11838790931989926,21.99
+19,BKNG,Booking Holdings,Consumer Discretionary,Consumer Discretionary,2155.6,0.048,0.06,14.35,5.78,0.4,0.8736099230111206,0.1644568006843456,235.27
+20,AVGO,Broadcom Inc.,Information Technology,Information Technology,546.6,0.277,0.07,15.64,6.5,0.42,0.7449100029507231,0.2767778105635881,45.11
+21,CDNS,Cadence Design Systems,Information Technology,Information Technology,178.4,0.346,0.12,1.54,0.91,0.59,0.8974700399467377,0.23435419440745672,62.32
+22,CDW,CDW,Information Technology,Information Technology,191.2,0.309,0.13,5.29,3.83,0.72,0.17264150943396228,0.05037735849056604,27.83
+23,CERN,Cerner,Health Care,Health Care,72.3,-0.025,0.04,2.44,1.55,0.64,0.8290190735694823,0.11989100817438691,30.93
+24,CHTR,Charter Communications,Communication Services,Communication Services,672.9,0.045,0.08,3.5,12.24,3.5,0.4633348547086566,0.0925756884223338,37.72
+25,CHKP,Check Point,Information Technology,Information Technology,110.3,-0.085,0.04,2.11,1.47,0.7,0.8857677902621722,0.35018726591760296,18.56
+26,CTAS,Cintas,Industrials,Industrials,428.3,0.157,0.09,2.48,2.27,0.92,0.47601476014760147,0.17448603057459147,38.65
+27,CSCO,Cisco Systems,Information Technology,Information Technology,54.7,0.219,0.09,37.59,23.24,0.62,0.6242635658914729,0.23100775193798448,22.39
+28,CTSH,Cognizant,Information Technology,Information Technology,78.4,0.0,0.05,7.0,3.32,0.47,0.37879426644182124,0.11467116357504217,23.56
+29,CMCSA,Comcast,Communication Services,Communication Services,51.1,-0.014,0.05,27.43,26.74,0.97,0.6569080467357581,0.13317710739982838,20.87
+30,CPRT,Copart,Industrials,Industrials,145.9,0.21,0.11,2.04,0.49,0.24,0.4864197530864197,0.32098765432098764,39.82
+31,COST,Costco,Consumer Staples,Consumer Staples,546.1,0.289,0.13,29.5,29.44,1.0,0.1267171918627842,0.026645392899880334,42.81
+32,CRWD,CrowdStrike,Information Technology,Information Technology,232.6,0.352,0.14,2.25,1.14,0.5,0.7307692307692307,-0.16863905325443787,
+33,CSX,CSX Corporation,Industrials,Industrials,35.6,,0.06,3.9,2.27,0.58,0.534629404617254,0.29404617253948967,20.23
+34,DXCM,DexCom,Health Care,Health Care,592.0,0.462,0.21,3.66,0.73,0.2,0.6876923076923077,0.10923076923076921,101.08
+35,DOCU,DocuSign,Information Technology,Information Technology,249.6,0.091,0.13,1.18,1.21,1.02,0.78125,-0.05078125,
+36,DLTR,Dollar Tree,Consumer Discretionary,Consumer Discretionary,141.1,0.221,0.09,5.37,4.29,0.8,0.2756310377064506,0.03381115612340293,17.00
+37,EBAY,EBay,Consumer Discretionary,Consumer Discretionary,72.5,0.292,0.13,17.76,5.3,0.3,0.7289084366253499,0.10555777688924431,21.24
+38,EA,Electronic Arts,Communication Services,Communication Services,126.0,0.014,0.04,3.39,2.58,0.76,0.7294633077765608,0.1610076670317634,61.05
+39,EXC,Exelon,Utilities,Utilities,53.4,0.219,0.08,14.88,15.83,1.06,0.43052749719416383,0.13501683501683504,48.83
+40,FAST,Fastenal,Industrials,Industrials,60.1,0.191,0.07,2.77,0.66,0.24,0.4633204633204633,0.15637065637065636,34.41
+41,FISV,Fiserv,Information Technology,Information Technology,98.2,-0.176,0.06,18.42,17.56,0.95,0.5073264472736008,0.10281047321643046,64.58
+42,FOXA,Fox Corporation,Communication Services,Communication Services,37.6,0.223,0.11,8.88,2.87,0.32,0.48407224958949097,0.2302134646962233,11.11
+43,FOX,Fox Corporation,Communication Services,Communication Services,35.1,0.182,0.1,8.88,2.87,0.32,0.48407224958949097,0.2302134646962233,10.28
+44,GILD,Gilead Sciences,Health Care,Health Care,70.3,0.147,0.05,13.99,10.24,0.73,0.8116156852176256,0.34927907290122623,17.04
+45,HON,Honeywell,Industrials,Industrials,208.2,-0.006,0.04,26.03,20.21,0.78,0.32184586333057946,0.1483535937684409,30.15
+46,IDXX,Idexx Laboratories,Health Care,Health Care,607.5,0.252,0.13,0.94,0.63,0.68,0.5839506172839506,0.21604938271604934,74.12
+47,ILMN,"Illumina, Inc.",Health Care,Health Care,369.8,0.143,0.11,2.45,0.91,0.37,0.7111913357400722,0.28610108303249093,77.70
+48,INCY,Incyte,Health Care,Health Care,68.4,-0.216,0.1,2.92,0.74,0.25,0.5276752767527676,0.22386223862238624,44.95
+49,INTC,Intel,Information Technology,Information Technology,48.8,0.027,0.09,61.3,29.57,0.48,0.5599208003334722,0.3555127136306795,11.84
+50,INTU,Intuit,Information Technology,Information Technology,666.9,0.469,0.19,4.49,2.14,0.48,0.7997010463378176,0.11360239162929746,82.80
+51,ISRG,Intuitive Surgical,Health Care,Health Care,329.2,0.261,0.14,5.73,1.03,0.18,0.6920883820384889,0.27156094084105487,74.19
+52,JD,JD.com,Consumer Discretionary,Consumer Discretionary,88.7,-0.008,0.11,288.8,204.17,0.71,0.07689247764142144,-0.01283446421712969,20.26
+53,KDP,Keurig Dr Pepper,Consumer Staples,Consumer Staples,35.0,0.12,0.05,2.8,6.8,2.42,0.5655384615384615,0.1630769230769231,29.70
+54,KLAC,KLA Corporation,Information Technology,Information Technology,399.0,0.363,0.12,6.14,2.52,0.41,0.6094049904030711,0.5124760076775432,25.02
+55,KHC,Kraft Heinz,Consumer Staples,Consumer Staples,34.8,0.057,0.08,9.56,8.46,0.88,0.3206831119544592,0.11590765338393422,20.92
+56,LRCX,Lam Research,Information Technology,Information Technology,642.0,0.289,0.09,11.14,3.41,0.31,0.45934014869888473,0.27416356877323417,21.16
+57,LULU,Lululemon Athletica,Consumer Discretionary,Consumer Discretionary,456.6,0.2,0.13,2.28,0.98,0.43,0.5809786354238455,0.14334941419710542,74.24
+58,MAR,Marriott International,Consumer Discretionary,Consumer Discretionary,147.4,0.129,0.08,2.99,6.02,2.01,0.7951807228915663,0.22088353413654618,139.71
+59,MRVL,"Marvell Technology, Inc.",Information Technology,Information Technology,72.0,0.374,0.16,1.91,1.08,0.57,0.34572490706319703,-0.25650557620817843,23.61
+60,MTCH,Match Group,Communication Services,Communication Services,133.7,-0.044,0.06,1.05,0.75,0.71,0.71072319201995,0.16334164588528677,90.22
+61,MELI,MercadoLibre,Consumer Discretionary,Consumer Discretionary,1258.7,-0.202,0.11,5.28,4.29,0.81,0.4345718901453958,0.05115778136779752,
+62,FB,Meta Platforms,Communication Services,Communication Services,333.1,0.166,0.12,75.42,17.81,0.24,0.801068597035505,0.31692519820751464,25.18
+63,MCHP,Microchip Technology,Information Technology,Information Technology,80.1,0.17,0.06,2.15,1.12,0.52,0.6472727272727273,0.14666666666666667,90.29
+64,MU,Micron Technology,Information Technology,Information Technology,83.4,0.23,0.09,19.91,6.42,0.32,0.4787285472564661,0.3287406333091613,20.36
+65,MSFT,Microsoft,Information Technology,Information Technology,329.7,0.347,0.13,174.33,80.53,0.46,0.6988768012004325,0.45247920206545,35.02
+66,MRNA,Moderna,Health Care,Health Care,329.6,0.615,0.44,13.42,9.96,0.74,0.7498490641980278,0.6707587039645804,48.11
+67,MDLZ,Mondelez International,Consumer Staples,Consumer Staples,60.2,0.045,0.05,10.46,14.26,1.36,0.39320523531049845,0.17516012252854357,19.26
+68,MNST,Monster Beverage,Consumer Staples,Consumer Staples,87.1,0.033,0.04,4.38,0.93,0.21,0.559177888022679,0.23883770375620128,30.84
+69,NTES,NetEase,Communication Services,Communication Services,114.3,0.184,0.11,108.94,49.01,0.45,0.5322428011355955,0.14339146500833672,31.76
+70,NFLX,Netflix,Communication Services,Communication Services,665.6,0.262,0.1,9.42,8.05,0.85,0.4379259655218496,0.19363891487371376,63.25
+71,NVDA,Nvidia,Information Technology,Information Technology,315.0,0.579,0.28,25.81,3.61,0.14,0.6519780374489653,0.34689567788258485,91.47
+72,NXPI,NXP Semiconductors,Information Technology,Information Technology,212.4,0.252,0.09,4.72,3.44,0.73,0.553303040894792,0.1814051031108004,53.08
+73,ORLY,O'Reilly Auto Parts,Consumer Discretionary,Consumer Discretionary,635.7,0.303,0.13,4.56,5.99,1.31,0.5224137931034483,0.16063218390804598,21.93
+74,OKTA,Okta (company),Information Technology,Information Technology,222.7,-0.06,0.08,2.88,0.91,0.32,0.680379746835443,-0.8765822784810128,
+75,PCAR,Paccar,Industrials,Industrials,86.5,-0.014,0.06,20.0,4.49,0.22,0.13172721973965418,0.07344083932387799,15.66
+76,PAYX,Paychex,Information Technology,Information Technology,122.4,0.237,0.11,6.32,4.96,0.78,0.710987996306556,0.3084025854108957,37.78
+77,PYPL,PayPal,Information Technology,Information Technology,187.8,-0.126,0.1,54.13,41.7,0.77,0.46036881268197993,0.1758330637334196,63.47
+78,PTON,Peloton Interactive,Consumer Discretionary,Consumer Discretionary,46.4,-1.349,0.23,2.56,1.3,0.51,0.3267080745341615,-0.46708074534161487,147.64
+79,PEP,PepsiCo,Consumer Staples,Consumer Staples,161.1,0.102,0.06,23.71,25.08,1.06,0.5351428995987915,0.11015899747387192,25.41
+80,PDD,Pinduoduo,Consumer Discretionary,Consumer Discretionary,68.5,-1.104,0.26,147.57,80.07,0.54,0.6572941074372993,0.10479041916167665,
+81,QCOM,Qualcomm,Information Technology,Information Technology,175.7,0.182,0.09,20.08,11.95,0.6,0.5782990574121679,0.2997000856898029,16.12
+82,REGN,Regeneron Pharmaceuticals,Health Care,Health Care,643.3,0.201,0.12,13.78,3.71,0.27,0.6759339704604692,0.472632493483927,10.89
+83,ROST,Ross Stores,Consumer Discretionary,Consumer Discretionary,110.0,0.005,0.05,7.84,4.48,0.57,0.2730054644808743,0.08415300546448087,29.95
+84,SGEN,Seagen,Health Care,Health Care,169.5,0.002,0.1,3.11,0.7,0.22,-0.2783018867924528,-0.6933962264150944,50.99
+85,SIRI,Sirius XM,Communication Services,Communication Services,6.2,-0.065,0.04,1.04,2.83,2.73,0.5141037306642402,0.15605095541401276,87.14
+86,SWKS,Skyworks Solutions,Information Technology,Information Technology,152.5,0.107,0.08,2.87,0.66,0.23,0.4683447749809306,0.24866514111365373,19.41
+87,SPLK,Splunk,Information Technology,Information Technology,124.8,-0.635,0.13,3.65,1.54,0.42,0.6963696369636964,-0.6336633663366337,
+88,SBUX,Starbucks,Consumer Discretionary,Consumer Discretionary,110.7,0.108,0.05,9.76,8.15,0.84,0.2979010678777464,0.21652141892721247,45.96
+89,SNPS,Synopsys,Information Technology,Information Technology,342.2,0.341,0.13,2.76,2.33,0.84,0.8174077578051089,0.1882686849574267,55.92
+90,TMUS,T-Mobile US,Communication Services,Communication Services,113.5,-0.162,0.07,16.77,19.25,1.15,0.5837749694251937,0.03521198532409295,40.05
+91,TSLA,"Tesla, Inc.",Consumer Discretionary,Consumer Discretionary,1081.9,0.459,0.19,25.0,18.05,0.72,0.26604637639020134,0.11761285163916553,401.80
+92,TXN,Texas Instruments,Information Technology,Information Technology,188.3,0.156,0.06,13.58,2.41,0.18,0.6788714193409434,0.4193409433555891,26.81
+93,TCOM,Trip.com Group,Consumer Discretionary,Consumer Discretionary,27.9,-0.226,0.14,78.7,68.57,0.87,0.7923599320882853,-0.10984719864176572,35.49
+94,VRSN,Verisign,Information Technology,Information Technology,241.0,0.168,0.06,1.26,1.05,0.83,0.8562874251497005,0.47005988023952094,37.14
+95,VRSK,Verisk Analytics,Industrials,Industrials,225.8,0.122,0.08,0.93,1.84,1.97,0.6508563899868247,0.2661396574440053,48.14
+96,VRTX,Vertex Pharmaceuticals,Health Care,Health Care,183.6,-0.235,0.08,8.85,1.91,0.22,0.6320564516129032,0.42943548387096775,23.93
+97,WBA,Walgreens Boots Alliance,Consumer Staples,Consumer Staples,45.9,0.15,0.08,15.81,22.05,1.39,0.21898896736909695,0.0183001576090129,19.59
+98,WDAY,"Workday, Inc.",Information Technology,Information Technology,277.5,0.193,0.08,4.69,4.28,0.91,0.7294649585531273,0.03240391861341371,
+99,XEL,Xcel Energy,Utilities,Utilities,64.8,-0.043,0.05,4.49,5.76,1.28,0.45284107297375253,0.17565618690510526,21.26
+100,XLNX,Xilinx,Information Technology,Information Technology,223.9,0.386,0.16,4.19,0.61,0.15,0.6858974358974359,0.25106837606837606,49.18
+101,ZM,Zoom Video Communications,Information Technology,Information Technology,220.2,-1.142,0.15,6.11,1.69,0.28,0.7421503330161752,0.3235014272121789,82.98
