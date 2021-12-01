@@ -1,8 +1,6 @@
 import pandas as pd
 import requests
-
 from datetime import datetime
-import time
 
 with open('/Users/ilya/Desktop/keys/yahoo_finance.txt','r') as file:
     key = file.readlines()
@@ -21,11 +19,13 @@ def get_json_response(ticker, url):
 
     return requests.request("GET", url, headers=headers, params=querystring).json()
 
+
 def unix_to_date(unix_timestamp):
         ts = int(unix_timestamp)
         return datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d')
 
-def get_income_statement(ticker, period):
+
+def get_income_statement(ticker, quarter_periods):
     financials_response = get_json_response(ticker,'https://yh-finance.p.rapidapi.com/stock/v2/get-financials')
         
     income_statment_df = pd.DataFrame()
@@ -51,4 +51,83 @@ def get_income_statement(ticker, period):
 
     income_statment_df['ticker'] = ticker
 
-    return income_statment_df.head(period)
+    return income_statment_df.head(quarter_periods)
+
+
+def get_la_ratio(ticker, quarter_periods):
+
+  balance_sheet_response = get_json_response(ticker,'https://yh-finance.p.rapidapi.com/stock/v2/get-balance-sheet')
+
+  balance_df = pd.DataFrame()
+
+  for item in balance_sheet_response['balanceSheetHistoryQuarterly']['balanceSheetStatements']:
+    balance_line = pd.Series([item['endDate']['fmt'],
+                              item['totalCurrentLiabilities']['raw'],
+                              item['totalCurrentAssets']['raw']],
+                              index = ['quarter','liabilities','assets'])
+
+    balance_df = balance_df.append(balance_line, ignore_index = True)
+
+  balance_df.loc[:,'la_ratio'] = round(balance_df['liabilities']/balance_df['assets'],2)
+  balance_df.loc[:,'assets_billion'] = round(balance_df['assets']/1000000000,2)
+  balance_df.loc[:,'liabilities_billion'] = round(balance_df['liabilities']/1000000000,2)
+  balance_df = balance_df.drop(columns = ['assets','liabilities'])
+  balance_df['ticker'] = ticker
+
+  return balance_df.head(quarter_periods)
+
+def get_pe_ratio(ticker, quarter_periods):
+
+    stats_response = get_json_response(ticker, "https://yh-finance.p.rapidapi.com/stock/v2/get-statistics")
+
+    ratio_df = pd.DataFrame()
+
+    if stats_response['timeSeries']['quarterlyPeRatio'] != []:
+        for quarter in stats_response['timeSeries']['quarterlyPeRatio']:
+            if quarter is not None:
+                pd_row = pd.Series([quarter['asOfDate'], quarter['reportedValue']['fmt']],
+                index = ['quarter','pe_ratio'])
+                ratio_df = ratio_df.append(pd_row, ignore_index=True)
+
+    if ratio_df.empty == True:
+        ratio_df['ticker'] = [ticker]
+        ratio_df['pe_ratio'] = [None]
+        ratio_df['quarter'] = [datetime.now().date()]
+
+    else:
+        pass
+
+    ratio_df['ticker'] = ticker
+
+    return ratio_df.sort_values(by = 'quarter', ascending = False).head(quarter_periods)
+
+def get_weekly_history_df(ticker):
+
+    history_response = get_json_response(ticker, "https://yh-finance.p.rapidapi.com/stock/v3/get-historical-data")
+
+    weekly_history_df = pd.DataFrame(history_response['prices'])[['date','close']]
+    weekly_history_df.loc[:,'date'] = weekly_history_df['date'].apply(lambda x: unix_to_date(x))
+
+    weekly_history_df.loc[:,'week'] = [pd.Timestamp(date).week for date in weekly_history_df['date']]
+    weekly_history_df.loc[:,'year'] = [pd.Timestamp(date).year for date in weekly_history_df['date']]
+
+    weekly_history_df.loc[:,'close'] = weekly_history_df['close'].round(1)
+
+    return weekly_history_df[['date','year','week','close']]
+
+def list_perfomance(ticker):
+    weekly_history_df = get_weekly_history_df(ticker)
+
+    attributes = ['ticker','yoy_growth','std','mean_price','volatility','last_close_price']
+
+    performance_list = [ticker,\
+                        round((weekly_history_df.iloc[0]['close'] - weekly_history_df.iloc[-1]['close'])/weekly_history_df.loc[0]['close'],3),\
+                        round(weekly_history_df['close'].std(),2),
+                        round(weekly_history_df['close'].mean(),2),
+                        round(weekly_history_df['close'].std()/weekly_history_df['close'].mean(),2),
+                        round(weekly_history_df.iloc[0]['close'],1)
+                        ]
+
+    performance_row = pd.Series(performance_list, index = attributes)
+
+    return performance_row
