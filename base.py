@@ -4,7 +4,7 @@ import requests
 from datetime import datetime
 import time
 
-class Base():
+class response_getter():
 
     def __init__(self):
 
