@@ -21,8 +21,8 @@ def get_json_response(ticker, url):
 
 
 def unix_to_date(unix_timestamp):
-        ts = int(unix_timestamp)
-        return datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d')
+    ts = int(unix_timestamp)
+    return datetime.utcfromtimestamp(ts) #.strftime('%Y-%m-%d')
 
 
 def get_income_statement(ticker, quarter_periods):
@@ -131,3 +131,41 @@ def list_perfomance(ticker):
     performance_row = pd.Series(performance_list, index = attributes)
 
     return performance_row
+
+def get_stock_weekly_changes(ticker, last_weeks):
+    history_json_response = get_json_response(ticker,'https://yh-finance.p.rapidapi.com/stock/v3/get-historical-data')
+
+    history_df = pd.DataFrame(history_json_response['prices'])
+
+    history_df.loc[:,'date'] = [unix_to_date(date) for date in history_df['date']]
+
+    history_df.loc[:,'year'] = [date.isocalendar()[0] for date in history_df['date']]
+    history_df.loc[:,'week'] = [date.isocalendar()[1] for date in history_df['date']]
+
+    weekly_history_df = history_df[['year','week','close']].groupby(['year','week']).mean()
+    weekly_history_df = weekly_history_df.reset_index()
+
+    weekly_history_df['previous_week_close'] = weekly_history_df['close'].shift(1)
+
+    weekly_history_df['wow_change_%'] = [round((close-previous_close)/previous_close,3)*100 if previous_close is not None else 0
+                                     for close, previous_close in zip(weekly_history_df['close'],
+                                                                  weekly_history_df['previous_week_close'])]
+
+    weekly_history_df['year-week'] = weekly_history_df['year'].astype('str')+'~'+weekly_history_df['week'].astype('str')
+
+    weekly_history_df = weekly_history_df.rename(columns = {'wow_change_%': ticker.lower()})
+
+    return weekly_history_df.tail(last_weeks)[['year-week',ticker.lower()]]
+
+def get_stock_daily_price(ticker, day_periods):
+    history_json_response = get_json_response(ticker,'https://yh-finance.p.rapidapi.com/stock/v3/get-historical-data')
+
+    history_df = pd.DataFrame(history_json_response['prices'])
+
+    history_df.loc[:,'date'] = [unix_to_date(date).date() for date in history_df['date']]
+
+    history_df = history_df[['date','close']].head(day_periods)
+
+    history_df = history_df.rename(columns = {'close': ticker.lower()})
+
+    return history_df
