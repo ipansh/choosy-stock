@@ -1,6 +1,6 @@
 # Choosy stock
 
-The problem on hand: how do you select company stocks from a variety offered in the market.
+The problem on hand: how do you select company stocks from a variety of options offered in the market.
 
 Steps made:
 1. Web-scraping wikipedia page for Nasdaq tickers.
