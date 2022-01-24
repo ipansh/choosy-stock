@@ -1,0 +1,11 @@
+#form_container {
+    width: 600px;
+}
+
+div.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+
+.slider {
+    width: 100%;
+}

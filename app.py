@@ -1,27 +1,17 @@
-from flask import Flask, render_template, session, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
-from flask_wtf import FlaskForm
-from wtforms import StringField, RadioField, SelectField, TextAreaField, SubmitField
 import os
-import psycopg2
+#os.environ['DATABASE_URL'] = 'postgresql://hezuwrpkvlsmnb:dcf155aab6a3dc77ab94892f030c44e264611d3c01b4133e70d5839167bef9ee@ec2-3-224-157-224.compute-1.amazonaws.com:5432/db233hod6s79so'
+#os.getenv('DATABASE_URL')
+
+from flask import Flask, render_template, session, redirect, url_for, request
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] =  #os.getenv('DATABASE_URL')
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://hezuwrpkvlsmnb:dcf155aab6a3dc77ab94892f030c44e264611d3c01b4133e70d5839167bef9ee@ec2-3-224-157-224.compute-1.amazonaws.com:5432/db233hod6s79so'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = 'mysecretkey'
 
 db = SQLAlchemy(app)
-
-class InfoForm(FlaskForm):
-    '''
-    This general class gets all forms submitted on the main page.
-    '''
-    invest_amount = StringField('How much are you willing to invest?')
-    pref_industry = SelectField('Which industries would you like to focus on?', choices=[('pescetarian','pescetarian'),('omnivore','omnivore'),('vegetarian','vegetarian'),('vegan','vegan')])
-    pref_growth = SelectField('What growth expectations do you have?')
-    pref_risk = SelectField('What level of risk can you tolerate?')
-    submit = SubmitField('Submit')
 
 # Create our database model
 class Company(db.Model):
@@ -51,30 +41,24 @@ class Company(db.Model):
     def __repr__(self):
         return '<Company Ticker %r>' % self.ticker
 
-@app.route("/",  methods = ['GET','POST'])
+@app.route("/")
 def home():
 
     db.create_all()
 
-    form = InfoForm()
-
-    if form.validate_on_submit():
-        invest_amount = form.invest_amount.data
-        pref_industry = form.pref_industry.data
-        pref_growth = form.pref_growth.data
-        pref_risk = form.pref_risk.data
-        submit = form.submit.data
-
-        print(invest_amount, pref_industry, pref_growth, pref_risk, submit)
-
-        return redirect(url_for('portfolio'))
-
     return render_template('home.html')
 
-@app.route("/portfolio")
+##more about forms here: https://overiq.com/flask-101/form-handling-in-flask/
+@app.route("/portfolio", methods = ['POST'])
 def portfolio():
+
+    invest_amount_response = request.form.get("invest_amount")
+    invest_industries_response = request.form.get("invest_industries")
+    invest_risk_response = request.form.get("invest_risk")
+
+    print(db.session.query(Company).filter(Company.industry in ['Information Technology']))
+
     return render_template('portfolio.html')
-    
 
 if __name__  == '__main__': 
     app.run(debug=True)

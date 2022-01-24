@@ -1,0 +1,1 @@
+We are going to remake this whole thing without flask form and with the same logic as in the stat calculator
