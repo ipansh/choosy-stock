@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://hezuwrpkvlsmnb:dcf155aab6a3dc77ab94892f030c44e264611d3c01b4133e70d5839167bef9ee@ec2-3-224-157-224.compute-1.amazonaws.com:5432/db233hod6s79so'
+app.config["SQLALCHEMY_DATABASE_URI"] = ''
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = 'mysecretkey'
 
