@@ -1,6 +1,4 @@
 import os
-#os.environ['DATABASE_URL'] = 'postgresql://hezuwrpkvlsmnb:dcf155aab6a3dc77ab94892f030c44e264611d3c01b4133e70d5839167bef9ee@ec2-3-224-157-224.compute-1.amazonaws.com:5432/db233hod6s79so'
-#os.getenv('DATABASE_URL')
 
 from flask import Flask, render_template, session, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
